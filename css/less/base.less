@@ -1,0 +1,87 @@
+/*
+ * Base Stylesheet
+ * Version: 1.0.0
+ *
+ * Author: MGH
+ * dev@mghus.com
+ *
+ * Changelog: 
+ * Version: 1.0.0
+ *
+ */
+
+/* Resets 
+--------------------*/
+*:focus{outline:none;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+button,input,legend,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+table{border-collapse:collapse;border-spacing:0; }
+sup,sub{vertical-align:baseline; }
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,textarea,caption,table,tbody,tfoot,thead,tr,th,td
+{font-family:inherit;font-size:inherit;}
+
+/* Base
+--------------------*/
+html, body { width:100%; }
+body { background:#ffffff; color:#322b40; font-family: @font-primary; }
+
+.left { float: left; }
+.right { float: right; }
+.clear { clear: both; }
+.clearfix:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+.clearfix {display: inline-block;}
+* html .clearfix { height: 1%;}
+.clearfix {display: block;}
+
+.hidden, .mobile-content { display:none; }
+
+ul { margin: 0; padding: 0; }
+
+a, p, input { outline:none !important; }
+p { color: #322b40; font-size: 14px; font-weight:200; line-height:30px; margin: 0 0 30px; }
+p strong { color:@color-orange; }
+
+a { color:@color-orange; cursor:pointer; text-decoration: none; }
+a:hover { color:@color-orange-dark; text-decoration:none; }
+a:active, a:visited { text-decoration:none; }
+a.tel-link { color:inherit !important; cursor:default; }
+
+a.btn { background:@color-orange; color:#fff; cursor:pointer; display:inline-block; font-family:@font-secondary; font-size:28px; font-weight:bold; padding:15px 50px; .round-borders(50px); text-align:center; }
+a.btn.active, a.btn:hover { background:#4f4464; }
+
+input[type="text"].error { background:#ffcbcb; }
+	
+h1, h2, h3, h4, h5, h6 { margin: 0; }
+
+iframe { max-width:100%; }
+
+.img-left { float:left; margin: 2px 10px 10px 0;}
+.img-right { float:right; margin: 2px 0 10px 10px; }
+.centered { text-align:center; }
+
+small { font-size:11px; }
+
+hr {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #8EB4BA -moz-use-text-color -moz-use-text-color;
+    border-image: none;
+    border-style: dotted none none;
+    border-width: 1px 0 0;
+    display: block;
+    height: 1px;
+    margin: 10px 0;
+    padding: 0;
+    width: 100%;
+}
+hr.blue { border-color:@color-blue; border-style:solid; color:@color-blue; margin-bottom:30px; }
+.rule-thin { background:url("images/rule-thin.png") no-repeat; height:10px; margin-bottom:10px; width:100%; }
+.border-bottom { background:url("images/rule-thin.png") no-repeat 0 bottom; margin-bottom:10px; padding-bottom:5px; }
+
+::selection { background:#e08a40; color:#ffffff; }
+::-moz-selection { background:#e08a40; color:#ffffff; }
+
+.formify-form .no-label label { display:none; }
+

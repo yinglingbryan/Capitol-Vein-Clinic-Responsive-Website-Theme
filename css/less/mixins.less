@@ -1,0 +1,68 @@
+.transition(...){
+	transition: @arguments;
+	-webkit-transition: @arguments;
+	-moz-transition: @arguments;
+	-o-transition: @arguments;
+	-ms-transition: @arguments;
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+}
+
+.transform(...) {
+	transform: @arguments;
+	-webkit-transform: @arguments;
+	-moz-transform: @arguments;
+	-o-transform: @arguments;
+	-ms-transform: @arguments;    
+}
+
+.opacity(@opacity: 0.5) {
+	-moz-opacity: @opacity;
+	-khtml-opacity: @opacity;
+	-webkit-opacity: @opacity;
+	opacity: @opacity;
+	@opperc: @opacity * 100;
+	-ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(Opacity=@{opperc})";
+	filter: ~"alpha(opacity=@{opperc})";
+}
+
+.border-radius(...){
+	border-radius: @arguments;
+	-webkit-border-radius: @arguments;
+	-moz-border-radius: @arguments;
+	-o-border-radius: @arguments;
+	-ms-border-radius: @arguments;
+}
+
+.opacity(@opacity: 0.5) {
+	-moz-opacity: @opacity;
+	-khtml-opacity: @opacity;
+	-webkit-opacity: @opacity;
+	opacity: @opacity;
+	@opperc: @opacity * 100;
+	-ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(Opacity=@{opperc})";
+	filter: ~"alpha(opacity=@{opperc})";
+}
+
+.box-shadow(...) {
+	box-shadow: @arguments;
+	-moz-box-shadow: @arguments;
+	-webkit-box-shadow: @arguments;
+	-ms-box-shadow: @arguments;
+}
+
+.clear-container {
+	&:after {
+		content: "";
+		clear: both;
+		display: block;
+	}
+}
+
+.round-borders (@radius) { 
+	border-radius: @radius; 
+	-moz-border-radius: @radius; 
+	-webkit-border-radius: @radius; 
+}
+
+.remove-float-width { float:none; width:100%; }

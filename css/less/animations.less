@@ -1,0 +1,309 @@
+/*
+ * Animation Stylesheet
+ * Version: 1.0.0
+ *
+ * Author: MGH
+ * dev@mghus.com
+ *
+ * Changelog: 
+ * Version: 1.0.0
+ *
+ */
+
+@media ( min-width: 1200px ){
+	img {
+		&.anim-load {
+			.opacity(1);
+		}
+
+		&.lazyload {
+			.opacity(0);
+		}
+	}
+
+	@media ( min-width: 1200px ) {
+		.fade-from-top-left {
+			@anim: 400ms opacity ease-out, 500ms transform ease-out;
+			.transition(@anim);
+			.opacity(0);
+			.transform(translate(-15px,-15px));
+		}
+
+		.reached {
+			&.fade-from-top-left {
+				.opacity(1);
+				.transform(translate(0,0));
+			}
+		}
+
+		.fade-from-top-right {
+			@anim: 500ms opacity ease-out, 300ms transform ease-out;
+			.transition(@anim);
+			.opacity(0);
+			.transform(translateX(50px));
+			.transform(translateY(-10px));
+		}
+
+		.reached {
+			&.fade-from-top-right {
+				.opacity(1);
+				.transform(translateX(0));
+				.transform(translateY(0));
+			}
+		}
+
+		.fade-in {
+			@anim: 500ms opacity ease-out;
+			.transition(@anim);
+			.opacity(0);
+		}
+
+		.reached {
+			&.fade-in {
+				.opacity(1);
+			}
+		}	
+
+		.fade-from-top {
+			@anim: 500ms opacity ease-out, 500ms transform ease-out;
+			.transition(@anim);
+			.opacity(0);
+			.transform(translateY(-10px));
+		}
+
+		.reached {
+			.animate.fade-from-top,
+			.animate .fade-from-top,
+			&.fade-from-top {
+				.opacity(1);
+				.transform(translateY(0));
+			}
+		}	
+
+		.fade-from-bottom {
+			@anim: 500ms opacity ease-out, 500ms transform ease-out;
+			.transition(@anim);
+			.opacity(0);
+			.transform(translateY(10px));
+			will-change: opacity, transform;
+		}
+
+		.reached {
+			&.fade-from-bottom {
+				.opacity(1);
+				.transform(translateY(0));
+			}
+		}	
+
+
+		.fade-from-left {
+			@anim: 500ms opacity ease-out, 500ms transform ease-out, background 200ms linear;
+			.transition(@anim);
+			.opacity(0);
+			.transform(translateX(-20px), translateZ(0px))
+		}
+
+		.reached {
+			.animate.fade-from-left,
+			.animate .fade-from-left,
+			&.fade-from-left {
+				.opacity(1);
+				.transform(translateX(0px), translateZ(0px));
+			}
+		}	
+
+
+
+		.fade-from-right {
+			@anim: 500ms opacity ease-out, 500ms transform ease-out, background 200ms linear;
+			.transition(@anim);
+			.opacity(0);
+			.transform(translateX(20px), translateZ(0px))
+		}
+
+		.reached {
+			.animate.fade-from-right,
+			.animate .fade-from-right,
+			&.fade-from-right {
+				.opacity(1);
+				.transform(translateX(0px), translateZ(0px));
+			}
+		}	
+	}
+
+	.s-fade-in-from-top {
+		.opacity(0);
+		.transform(translateY(-15px));
+		animation-timing-function: ease-out;
+		&.animated {		
+		    animation-name: s-fade-from-top;
+		    animation-duration: 475ms;
+		    .opacity(1);
+			.transform(translateY(0));
+		}
+	}
+
+	@keyframes s-fade-from-top {
+		0% {
+			.opacity(0);
+			.transform(translateY(-15px));
+		}
+
+		90% {
+			.opacity(1);
+		}
+
+		100% {
+			.transform(translateY(0));
+		}
+	}
+
+	.s-fade-in-from-bottom {
+		.opacity(0);
+		.transform(translateY(15px));
+		/* animation-timing-function: ease-out; */
+		-webkit-transition: 410ms opacity ease-out, 475ms transform ease-out;
+	    -moz-transition: 410ms opacity ease-out, 475ms transform ease-out;
+	    -o-transition: 410ms opacity ease-out, 475ms transform ease-out;
+	    transition: 410ms opacity ease-out, 475ms transform ease-out;
+		
+		&.animated {
+			/* animation-name: s-fade-from-bottom; animation-duration: 475ms; */
+		    .opacity(1);
+			.transform(translateY(0));
+		}
+	}
+
+	@keyframes s-fade-from-bottom {
+		0% {
+			.opacity(0);
+			.transform(translateY(15px));
+		}
+
+		90% {
+			.opacity(1);
+		}
+
+		100% {
+			.transform(translateY(0));
+		}
+	}
+
+	.s-fade-in-from-left {
+		.opacity(0);
+		.transform(translateX(-15px));
+		animation-timing-function: ease-out;
+		&.animated {		
+		    animation-name: s-fade-from-left;
+		    animation-duration: 475ms;
+		    .opacity(1);
+			.transform(translateX(0));
+		}
+	}
+
+	@keyframes s-fade-from-left {
+		0% {
+			.opacity(0);
+			.transform(translateX(-15px));
+		}
+
+		90% {
+			.opacity(1);
+		}
+
+		100% {
+			.transform(translateX(0));
+		}
+	}
+
+	.s-fade-in-from-right {
+		.opacity(0);
+		.transform(translateX(40px));
+		animation-timing-function: ease-out;
+		&.animated {		
+		    animation-name: s-fade-from-right;
+		    animation-duration: 475ms;
+		    .opacity(1);
+			.transform(translateX(0));
+		}
+	}
+
+	@keyframes s-fade-from-right {
+		0% {
+			.opacity(0);
+			.transform(translateX(40px));
+		}
+
+		90% {
+			.opacity(1);
+		}
+
+		100% {
+			.transform(translateX(0));
+		}
+	}
+
+	.s-fade-in {
+		.transition(475ms opacity ease-in);
+		.opacity(0);
+
+		&.animated {
+			.opacity(1);
+		}
+	}
+
+	.s-rotate-y {
+		.transform(rotateY(0deg));
+		animation-timing-function: ease-out;
+	    -webkit-backface-visibility: visible !important;
+	    backface-visibility: visible !important;
+
+		&.animated {		
+		    animation-name: s-rotate-y;
+		    animation-duration: 1500ms;
+			.transform(rotateY(360deg));
+		    -webkit-backface-visibility: visible !important;
+		    backface-visibility: visible !important;
+		}
+	}
+
+	@-moz-keyframes s-rotate-y {
+		0% {
+			.transform(rotateY(0deg));
+		    -webkit-backface-visibility: visible !important;
+		    backface-visibility: visible !important;
+		}
+
+		100% {
+			.transform(rotateY(360deg));
+		    -webkit-backface-visibility: visible !important;
+		    backface-visibility: visible !important;
+		}
+	}
+	@-webkit-keyframes s-rotate-y {
+		0% {
+			.transform(rotateY(0deg));
+		    -webkit-backface-visibility: visible !important;
+		    backface-visibility: visible !important;
+		}
+
+		100% {
+			.transform(rotateY(360deg));
+		    -webkit-backface-visibility: visible !important;
+		    backface-visibility: visible !important;
+		}
+	}
+	@keyframes s-rotate-y {
+		0% {
+			.transform(rotateY(0deg));
+		    -webkit-backface-visibility: visible !important;
+		    backface-visibility: visible !important;
+		}
+
+		100% {
+			.transform(rotateY(360deg));
+		    -webkit-backface-visibility: visible !important;
+		    backface-visibility: visible !important;
+		}
+	}
+}

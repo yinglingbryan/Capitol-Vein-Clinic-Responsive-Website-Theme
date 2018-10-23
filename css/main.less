@@ -1,0 +1,37 @@
+
+/* Presets */
+@color-blue: #6fa3b2;
+@color-orange: #e08a40;
+@color-orange-dark: #ad672b;
+@color-purple: #322b40;
+
+@font-primary: 'Roboto', sans-serif;
+@font-secondary: 'Fira Sans', sans-serif;
+
+/* Init */
+@import "less/base.less";
+@import "less/mixins.less";
+@import "less/animations.less"; 
+
+div.ccm-page { 
+	@import "less/styles.less"; 
+	@import "less/responsive.less";
+}
+
+/* Custom */
+div.page-template-frontpage { padding-bottom:80px; }
+div.page-template-frontpage .header { background:rgba(0,0,0,.25); }
+
+div.page-template-about .section.toolbar { position:absolute; z-index:2; }
+div.page-template-about ul.breadcrumb li, 
+div.page-template-about ul.breadcrumb li a { color:#fff; }
+
+div.page-template-landing-page {}
+div.page-template-landing-page .header { background:rgba(84, 133, 146,.75); }
+
+/* Editmode Overrides */
+.editmode .home .header { background:#e08a40; position:relative; }
+.editmode .services .entry, 
+.editmode .doctors-tabs .entry { display:block !important; margin-bottom:40px; }
+.editmode .callouts .slides li { margin-bottom:40px; }
+.editmode .section.contact.fixed { position:static !important; }
